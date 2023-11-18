@@ -17,7 +17,6 @@ Fully functional basic calculator (addition, subtraction, multiplication, divisi
    - [ ] Divide
 - [ ] Styling
    - [ ] FlexBox
-   - [ ] OR
    - [ ] Grid
  
 ### PMVP (Post Minimum Viable Product)
