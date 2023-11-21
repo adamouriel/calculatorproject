@@ -5,33 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Gameboy Calculator</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="calculator">
         <div class="displayOutline"></div>
-        <div class="display"></div>
+        <input type="text" id="display"/>
         <div class="buttons">
             <div class="numberButtons">
-                    <button class="red">1</button>
-                    <button class="red">2</button>
-                    <button class="red">3</button>
-                    <button class="red">4</button>
-                    <button class="red">5</button>
-                    <button class="red">6</button>
-                    <button class="red">7</button>
-                    <button class="red">8</button>
-                    <button class="red">9</button>
-                    <button class="red">0</button>
-                    <button class="red">.</button>
+                    <button onclick="getNum(1)" class="red">1</button>
+                    <button onclick="getNum(2)" class="red">2</button>
+                    <button onclick="getNum(3)" class="red">3</button>
+                    <button onclick="getNum(4)" class="red">4</button>
+                    <button onclick="getNum(5)" class="red">5</button>
+                    <button onclick="getNum(6)" class="red">6</button>
+                    <button onclick="getNum(7)" class="red">7</button>
+                    <button onclick="getNum(8)" class="red">8</button>
+                    <button onclick="getNum(9)" class="red">9</button>
+                    <button onclick="getNum(0)" class="red">0</button>
+                    <button onclick="getNum('.')" class="red">.</button>
+                    <button onclick="allClear()" class="red">AC</button>
             </div>
             <div class="operButtons">
-                <button class="black">+</button>
-                <button class="black">-</button>
-                <button class="black">/</button>
-                <button class="black">*</button>
-                <button class="black">=</button>
-                <button class="black">del</button>
+                <button onclick="getOp('+')" class="black">+</button>
+                <button onclick="getOp('-')" class="black">-</button>
+                <button onclick="getOp('/')" class="black">/</button>
+                <button onclick="getOp('*')" class="black">*</button>
+                <button onclick="calcEq()" class="black">=</button>
+                <button onclick="getOp()" class="black">del</button>
             </div>
         </div>
         <script src="script.js"></script>
