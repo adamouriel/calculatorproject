@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <div class="calculator">
-        <div class="displayOutline"></div>
+        <div class="power-light"></div>
+        <div class="displayOutline">
+        <span id="title">CACLULATOR </span>
+        <span id="title2"> CLASSIC</span>
+    </div>
         <input type="text" id="display"/>
         <div class="buttons">
             <div class="numberButtons">
@@ -32,8 +36,9 @@
                 <button onclick="getOp('/')" class="black">/</button>
                 <button onclick="getOp('*')" class="black">*</button>
                 <button onclick="calcEq()" class="black">=</button>
-                <button onclick="getOp()" class="black">del</button>
+                <button onclick="getOp('del')" class="black">del</button>
             </div>
+            
         </div>
         <script src="script.js"></script>
 </body>
