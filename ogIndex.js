@@ -8,13 +8,16 @@ let numArray2 = []
 const keys = {
     107: '+',
     189: '-',
-    56: '*',
-    191: '/',
+    106: '*',
+    111: '/',
     187: '=',
     8: 'delete',
 };
 
 const powerLight = document.querySelector('.power-light');
+
+document.addEventListener('click', turnOn);
+document.addEventListener('keydown', turnOn);
 
 function turnOn() {
   powerLight.classList.add('on');
@@ -30,30 +33,23 @@ function handleInput(e) {
 
 function handleKeys(e) {
     let key = keys[e.keyCode];
+    console.log(e, key)
     if (key === 'delete') {
-      let currentVal = display.value;
-      currentVal = currentVal.slice(0, -1);  
-      display.value = currentVal;
+        let currentVal = display.value
+        currentVal = currentVal.slice(0, -1)
+        display.value = currentVal
     } else if (key === '=') {
-      calcEq();
+        calcEq();
     } else {
-        console.log(numArray)
-        console.log(numArray2)
-    //   getOp(key);  
-      operate(key);
+        operate(key);
     }
-  }
+}
 
 function operate(oper) {
     if (oper === '+') {
         result = firstNumber + secondNumber
         display.value = result
     } else if (oper === '-') {
-        // console.log(oper)
-        // console.log(step)
-        // // console.log(operation)
-        // // step = 2
-        // operation=oper
         result = firstNumber - secondNumber
         display.value = result
     } else if (oper === '*') {
@@ -77,7 +73,6 @@ function getNum(num) {
         numArray2.push(num)
         secondNumber = Number(numArray2.join(''))
         display.value = secondNumber
-        // console.log(numArray2, secondNumber)
     }
 }
 
@@ -87,10 +82,8 @@ function getOp(op) {
         currentVal = currentVal.slice(0, -1)
         display.value = currentVal
     } else {
-        console.log(operation)
         step = 2
         operation = op
-        
     }
 }
 
@@ -106,12 +99,11 @@ function allClear() {
 }
 
 function calcEq() {
-    // if (operation === 'del') {
-    //     let currentVal = display.value
-    //     currentVal = currentVal.slice(0, -1)
-    //     display.value = currentVal
-    // } else
-    if (operation === '+') {
+    if (operation === 'del') {
+        let currentVal = display.value
+        currentVal = currentVal.slice(0, -1)
+        display.value = currentVal
+    } else if (operation === '+') {
         result = firstNumber + secondNumber
         display.value = result
     } else if (operation === '-') {
