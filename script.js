@@ -37,31 +37,15 @@ function handleKeys(e) {
     } else if (key === '=') {
       calcEq();
     } else {
-        console.log(numArray)
-        console.log(numArray2)
-    //   getOp(key);  
       operate(key);
     }
   }
 
 function operate(oper) {
-    if (oper === '+') {
-        result = firstNumber + secondNumber
-        display.value = result
-    } else if (oper === '-') {
-        // console.log(oper)
-        // console.log(step)
-        // // console.log(operation)
-        // // step = 2
-        // operation=oper
-        result = firstNumber - secondNumber
-        display.value = result
-    } else if (oper === '*') {
-        result = firstNumber * secondNumber
-        display.value = result
-    } else if (oper === '/') {
-        result = firstNumber / secondNumber
-        display.value = result
+    if (oper === '+' || oper === '-'|| oper === '*'|| oper === '/') {
+        step = 2
+        operation=oper
+        display.value = ''
     }
 }
 
@@ -85,12 +69,18 @@ function getOp(op) {
     if (op === 'del') {
         let currentVal = display.value
         currentVal = currentVal.slice(0, -1)
+        if (step===0 || step===1){
+            numArray = numArray.slice(0, -1)
+            firstNumber = numArray.join('')
+        } else if (step===2){
+            numArray2 = numArray2.slice(0, -1)
+            secondNumber = numArray2.join('')
+        }
         display.value = currentVal
     } else {
         console.log(operation)
         step = 2
         operation = op
-        
     }
 }
 
@@ -112,16 +102,16 @@ function calcEq() {
     //     display.value = currentVal
     // } else
     if (operation === '+') {
-        result = firstNumber + secondNumber
+        result = Number(firstNumber) + Number(secondNumber);
         display.value = result
     } else if (operation === '-') {
-        result = firstNumber - secondNumber
+        result = Number(firstNumber) - Number(secondNumber);
         display.value = result
     } else if (operation === '*') {
-        result = firstNumber * secondNumber;
+        result = Number(firstNumber) * Number(secondNumber);
         display.value = result;
     } else if (operation === "/") {
-        result = firstNumber / secondNumber;
+        result = Number(firstNumber) / Number(secondNumber);
         display.value = result;
     }
 }
