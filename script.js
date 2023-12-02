@@ -108,11 +108,6 @@ function allClear() {
 }
 
 function calcEq() {
-    // if (operation === 'del') {
-    //     let currentVal = display.value
-    //     currentVal = currentVal.slice(0, -1)
-    //     display.value = currentVal
-    // } else
     if (operation === '+') {
         result = Number(firstNumber) + Number(secondNumber);
         display.value = result
