@@ -17,7 +17,13 @@ const keys = {
 const powerLight = document.querySelector('.power-light');
 
 function turnOn() {
-  powerLight.classList.add('on');
+    if (!powerLight.classList.contains('on')) {
+      powerLight.classList.add('on');
+      display.classList.add('game-background-animation');
+    } else {
+      powerLight.classList.remove('on');
+      display.classList.remove('game-background-animation');
+    }
 }
 document.addEventListener('keydown', handleInput);
 document.addEventListener('keydown', handleKeys);
@@ -31,9 +37,16 @@ function handleInput(e) {
 function handleKeys(e) {
     let key = keys[e.keyCode];
     if (key === 'delete') {
-      let currentVal = display.value;
-      currentVal = currentVal.slice(0, -1);  
-      display.value = currentVal;
+       let currentVal = display.value
+        currentVal = currentVal.slice(0, -1)
+        if (step===0 || step===1){
+            numArray = numArray.slice(0, -1)
+            firstNumber = numArray.join('')
+        } else if (step===2){
+            numArray2 = numArray2.slice(0, -1)
+            secondNumber = numArray2.join('')
+        }
+        display.value = currentVal
     } else if (key === '=') {
       calcEq();
     } else {
@@ -61,7 +74,6 @@ function getNum(num) {
         numArray2.push(num)
         secondNumber = Number(numArray2.join(''))
         display.value = secondNumber
-        // console.log(numArray2, secondNumber)
     }
 }
 
