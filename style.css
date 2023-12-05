@@ -1,6 +1,13 @@
 * {
     box-sizing: border-box;
-}
+  }
+
+  body {
+    background-image: url('https://wallpapers.com/images/hd/super-mario-background-vbep44x7ca67u2vn.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+  }
 
 .calculator {
     width: 300px;
@@ -18,7 +25,6 @@
     border-bottom: 4px solid #ccc;
     background: linear-gradient(to right, #D3D3D3, #b9b9b9);
     position: relative;
-    
 }
 
 .power-light {
@@ -139,8 +145,8 @@
       opacity: 1;
     }
     100% {
-      background-color: #080808; /* Dimmed color for the background */
-      opacity: 0.7; /* Dim the screen */
+      background-color: #080808; 
+      opacity: 0.7; 
     }
   }
   
